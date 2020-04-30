@@ -1,0 +1,32 @@
+.cards {
+  background-color: #282c34;
+  margin: 0px;
+  padding: 0px;
+  padding: 5px 0 0 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+}
+
+.cards__card {
+  display: inline-block;
+  float: none;
+  height: 180px;
+  width: 100px;
+  font-size: 90%;
+  color: black;
+  margin: 5px 1% 0 0;
+  line-height: 1.4;
+  padding-left: 0;
+}
+
+.cards__card li {
+  display: inline;
+  text-align: center;
+}
+
+.centerDiv {
+  width: 100%;
+  text-align: center;
+}
