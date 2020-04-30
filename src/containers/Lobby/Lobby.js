@@ -32,7 +32,7 @@ class Lobby extends React.Component {
                 )
             } onChange={this.handleInputChange} />
           ) : (
-              <p>{this.state.story}</p>
+              <p style={{textAlign:'center'}}>{this.state.story}</p>
             )
         }
         {
