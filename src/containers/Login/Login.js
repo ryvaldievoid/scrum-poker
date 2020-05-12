@@ -48,10 +48,26 @@ class Login extends React.Component {
             let data = snapshot.val();
             this.setState({ loading: false, rooms: data });
             if (data !== null && this.state.room_name !== '') {
-                // join room
-                this.setState({ status: 'join' });
-                const { room_name, name, status } = this.state;
-                this.props.history.push('/lobby', { room_name, name, status });
+                var status = true;
+                data['team_member'].map((member, index) => 
+                    member.name === this.state.name ? (
+                        status = false
+                    ) : (
+                        console.log("don't change status")
+                    )
+                );
+                if (window.confirm("Room already exist. Join?")) {
+                    if (status) {
+                        // join room
+                        this.setState({ status: 'join' });
+                        const { room_name, name, status } = this.state;
+                        this.props.history.push('/lobby', { room_name, name, status });
+                    } else {
+                        window.alert("Name already used. Use another Name!") ;
+                    }
+                } else {
+                    window.alert("Create another Room Name!");
+                }
             } else {
                 // alert('Create or Enter a room name first!');
                 // create room
